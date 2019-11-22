@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'SwiftDrawer'
+  s.name             = 'SwiftDrawerX'
   s.version          = '5.0.0'
   s.summary          = 'Drawer in SwiftUI'
 
@@ -19,11 +19,11 @@ Pod::Spec.new do |s|
 
   s.description      = 'A Drawer view implement on SwiftUI'
 
-  s.homepage         = 'https://github.com/MillmanY/SwiftDrawer'
+  s.homepage         = 'https://github.com/jinlongchen/SwiftDrawer'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'MillmanY' => 'millmanyang@gmail.com' }
-  s.source           = { :git => 'https://github.com/MillmanY/SwiftDrawer.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/jinlongchen/SwiftDrawer.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '13.0'

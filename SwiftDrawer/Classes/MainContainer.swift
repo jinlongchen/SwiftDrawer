@@ -8,14 +8,14 @@
 
 import SwiftUI
 struct MainContainer<Content: View> : View {
-    @ObjectBinding private var drawerControl: DrawerControl
-    @ObjectBinding private var leftRear: SliderStatus
-    @ObjectBinding private var rightRear: SliderStatus
+    @ObservedObject private var drawerControl: DrawerControl
+    @ObservedObject private var leftRear: SliderStatus
+    @ObservedObject private var rightRear: SliderStatus
     
-    @State private var gestureCurrent: Length = 0
+    @State private var gestureCurrent: CGFloat = 0
     
     let main: AnyView
-    private var maxMaskAlpha: Length
+    private var maxMaskAlpha: CGFloat
     private var maskEnable: Bool
     
     var body: some View {
@@ -26,7 +26,7 @@ struct MainContainer<Content: View> : View {
     }
     
     init(content: Content,
-         maxMaskAlpha: Length = 0.25,
+         maxMaskAlpha: CGFloat = 0.25,
          maskEnable: Bool = true,
          drawerControl: DrawerControl) {
         
@@ -51,7 +51,7 @@ struct MainContainer<Content: View> : View {
             self.main
             if maskEnable && drawerControl.maxShowRate > 0 {
                 AnyView(Color.black.opacity(Double(drawerControl.maxShowRate*self.maxMaskAlpha)))
-                    .tapAction {
+                    .onTapGesture {
                     self.drawerControl.hideAllSlider()
                 }.padding(EdgeInsets(top: -proxy.safeAreaInsets.top, leading: 0, bottom: -proxy.safeAreaInsets.bottom, trailing: 0))
             }
@@ -89,7 +89,7 @@ struct MainContainer<Content: View> : View {
         }))
     }
     
-    var offset: Length {
+    var offset: CGFloat {
         switch (self.leftRear.currentStatus, self.rightRear.currentStatus) {
         case (.hide, .hide):
             return 0
@@ -107,7 +107,7 @@ struct MainContainer<Content: View> : View {
         return 0
     }
     
-    var maxShowRate: Length {
+    var maxShowRate: CGFloat {
         return max(self.leftRear.showRate, self.rightRear.showRate)
     }
 }

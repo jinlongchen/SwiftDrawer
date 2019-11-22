@@ -8,10 +8,11 @@
 import Foundation
 import SwiftUI
 import Combine
-public class DrawerControl: BindableObject {
+public class DrawerControl: ObservableObject {
     public let didChange = PassthroughSubject<DrawerControl, Never>()
     
-    private var statusObserver = [Subscribers.Sink<PassthroughSubject<SliderStatus,Never>>]()
+    private var statusObserver = [AnyCancellable]()
+    //private var statusObserver = [Subscribers.Sink<PassthroughSubject<SliderStatus,Never>>]()
     private(set) var status = [SliderType: SliderStatus]() {
         didSet {
             statusObserver.forEach {
@@ -44,7 +45,7 @@ public class DrawerControl: BindableObject {
             didChange.send(self)
         }
     }
-    private(set) var maxShowRate: Length = .zero {
+    private(set) var maxShowRate: CGFloat = .zero {
         didSet {
             didChange.send(self)
         }
@@ -52,7 +53,7 @@ public class DrawerControl: BindableObject {
 
     public func setSlider<Slider: SliderViewProtocol>(view: Slider,
                                                       widthType: SliderWidth = .percent(rate: 0.6),
-                                                      shadowRadius: Length = 10) {
+                                                      shadowRadius: CGFloat = 10) {
         let status = SliderStatus(type: view.type)
         
         status.maxWidth = widthType

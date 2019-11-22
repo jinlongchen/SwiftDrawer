@@ -10,10 +10,10 @@ import Foundation
 import SwiftUI
 import Combine
 
-public class SliderStatus: BindableObject {
+public class SliderStatus: ObservableObject {
     public let didChange = PassthroughSubject<SliderStatus, Never>()
     var parentSize = CGSize.zero
-    var sliderWidth: Length {
+    var sliderWidth: CGFloat {
         get {
             switch self.maxWidth {
             case .percent(let rate):
@@ -23,8 +23,8 @@ public class SliderStatus: BindableObject {
             }
         }
     }
-    var shadowRadius: Length = 0
-    var showRate: Length = 0
+    var shadowRadius: CGFloat = 0
+    var showRate: CGFloat = 0
     public var currentStatus: ShowStatus = .hide {
         didSet {
             switch currentStatus {
@@ -54,7 +54,7 @@ public class SliderStatus: BindableObject {
         }
     }
     
-    func sliderOffset() -> Length {
+    func sliderOffset() -> CGFloat {
         if self.type == .none {
             return 0
         }
