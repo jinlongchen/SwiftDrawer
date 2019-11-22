@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SwiftDrawer
+import SwiftDrawerX
 struct Slider2View : View, SliderProtocol {
     var body: some View {
         Text("Slider 2 View!")

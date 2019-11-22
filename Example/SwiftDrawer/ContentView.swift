@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SwiftDrawer
+import SwiftDrawerX
 struct ContentView : View {
     var body: some View {
         Drawer()

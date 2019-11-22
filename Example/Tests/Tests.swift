@@ -1,5 +1,5 @@
 import XCTest
-import SwiftDrawer
+import SwiftDrawerX
 
 class Tests: XCTestCase {
     

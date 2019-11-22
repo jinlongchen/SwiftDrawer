@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SwiftDrawer
+import SwiftDrawerX
 struct SliderView : View, SliderProtocol {
     @EnvironmentObject public var drawerControl: DrawerControl
     let type: SliderType
@@ -19,12 +19,12 @@ struct SliderView : View, SliderProtocol {
             List {
                 HeaderView()
                 
-                SliderCell(imgName: "home", title: "Home").tapAction {
+                SliderCell(imgName: "home", title: "Home").onTapGesture {
                     self.drawerControl.setMain(view: HomeView())
                     self.drawerControl.show(type: .leftRear, isShow: false)
                 }
                 
-                SliderCell(imgName: "account", title: "Account").tapAction {
+                SliderCell(imgName: "account", title: "Account").onTapGesture {
                     self.drawerControl.setMain(view: AccountView())
                     self.drawerControl.show(type: .leftRear, isShow: false)
                 }

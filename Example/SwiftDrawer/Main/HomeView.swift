@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SwiftDrawer
+import SwiftDrawerX
 struct HomeView : View {
     @EnvironmentObject public var control: DrawerControl
 
@@ -16,9 +16,9 @@ struct HomeView : View {
     
             Text("Home View in Main")
                 .navigationBarTitle(Text("Home"), displayMode: .inline)
-                .navigationBarItems(leading: Image("menu").tapAction {
+                .navigationBarItems(leading: Image("menu").onTapGesture {
                     self.control.show(type: .leftRear, isShow: true)
-                }, trailing: Text("right").tapAction {
+                }, trailing: Text("right").onTapGesture {
                     self.control.show(type: .rightFront, isShow: true)
                 })
         }
