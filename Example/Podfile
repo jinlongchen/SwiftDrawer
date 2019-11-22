@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'SwiftDrawer_Example' do
-  pod 'SwiftDrawer', :path => '../'
+  pod 'SwiftDrawerX', :path => '../'
 
   target 'SwiftDrawer_Tests' do
     inherit! :search_paths

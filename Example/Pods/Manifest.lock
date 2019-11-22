@@ -1,16 +1,16 @@
 PODS:
-  - SwiftDrawer (0.1.0)
+  - SwiftDrawerX (5.0.0)
 
 DEPENDENCIES:
-  - SwiftDrawer (from `../`)
+  - SwiftDrawerX (from `../`)
 
 EXTERNAL SOURCES:
-  SwiftDrawer:
+  SwiftDrawerX:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SwiftDrawer: 17e70567d4a42fd7fc8ebcf90d15783b6e8f5740
+  SwiftDrawerX: 2ccff883d1d7216bd1ae6b7985b4eac0a70b5b60
 
-PODFILE CHECKSUM: ff97934ff6ce85226cded4803a8bb2108de4253c
+PODFILE CHECKSUM: 42f6a4b68afbf9b14c41993c7753f856780593ee
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.8.4

@@ -328,11 +328,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SwiftDrawer_Example/Pods-SwiftDrawer_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftDrawer/SwiftDrawer.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftDrawerX/SwiftDrawerX.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDrawer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDrawerX.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
